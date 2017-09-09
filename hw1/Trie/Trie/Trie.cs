@@ -10,7 +10,6 @@
         {
             _rootNode = new TrieNode();
             _size = 0;
-            _emptyStringContains = false;
         }
         
         /// <summary>
@@ -21,10 +20,6 @@
         public bool Contains(string element)
         {
             var currentNode = this._rootNode;
-            if (element.Equals(string.Empty))
-            {
-                return this._emptyStringContains;
-            }
             foreach (var ch in element)
             {
                 if (!currentNode.IsContainLinkWithValue(ch))
@@ -48,10 +43,6 @@
                 return false;
             }
             _size++;
-            if (element.Equals(string.Empty))
-            {
-                _emptyStringContains = true;
-            }
             var curNode = _rootNode;
             foreach (var ch in element)
             {
@@ -84,10 +75,6 @@
                 return false;
             }
             _size--;
-            if (element.Equals(string.Empty))
-            {
-                _emptyStringContains = false;
-            }
             var curNode = _rootNode;
             foreach (var ch in element)
             {
@@ -137,6 +124,5 @@
         
         private readonly TrieNode _rootNode;
         private int _size;
-        private bool _emptyStringContains;
     }
 }
