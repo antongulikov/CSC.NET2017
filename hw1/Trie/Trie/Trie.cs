@@ -19,7 +19,7 @@
         /// <returns> True if trie contains requesting element, false otherwise.</returns>
         public bool Contains(string element)
         {
-            var currentNode = this._rootNode;
+            var currentNode = _rootNode;
             foreach (var ch in element)
             {
                 if (!currentNode.IsContainLinkWithValue(ch))
