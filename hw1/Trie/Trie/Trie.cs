@@ -28,7 +28,7 @@
                 }
                 currentNode = currentNode.GetLink(ch);
             }
-            return currentNode.IsTerminateNode();
+            return currentNode.IsTerminatingNode();
         }
         
         /// <summary>
@@ -42,7 +42,7 @@
             {
                 return false;
             }
-            _size++;
+            ++_size;
             var curNode = _rootNode;
             foreach (var ch in element)
             {
@@ -74,7 +74,7 @@
             {
                 return false;
             }
-            _size--;
+            --_size;
             var curNode = _rootNode;
             foreach (var ch in element)
             {

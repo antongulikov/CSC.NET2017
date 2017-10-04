@@ -11,7 +11,7 @@ namespace Trie
         {
             _nextNode = new Dictionary<char, TrieNode>();
             _startPrefixCount = 0;
-            _isTerminateNode = false;
+            _isTerminatingNode = false;
         }
         
         /// <summary>
@@ -19,7 +19,7 @@ namespace Trie
         /// </summary>
         public void IncreaseStringCounter()
         {
-            _startPrefixCount++;
+            ++_startPrefixCount;
         }
         
         /// <summary>
@@ -27,7 +27,7 @@ namespace Trie
         /// </summary>
         public void DecreaseStringCounter()
         {
-            _startPrefixCount--;
+            --_startPrefixCount;
         }
         
         /// <summary>
@@ -84,9 +84,9 @@ namespace Trie
         /// Checks if any string ending in this node. 
         /// </summary>
         /// <returns> Return true if there is string which ends in this node.</returns>
-        public bool IsTerminateNode()
+        public bool IsTerminatingNode()
         {
-            return _isTerminateNode;
+            return _isTerminatingNode;
         }
         
         /// <summary>
@@ -94,7 +94,7 @@ namespace Trie
         /// </summary>
         public void MarkNodeAsTerminated()
         {
-            _isTerminateNode = true;
+            _isTerminatingNode = true;
         }
         
         /// <summary>
@@ -102,12 +102,12 @@ namespace Trie
         /// </summary>
         public void UnmarkNodeAsTerminated()
         {
-            _isTerminateNode = false;
+            _isTerminatingNode = false;
         }
 
         private readonly Dictionary<char, TrieNode> _nextNode;
         private int _startPrefixCount;
-        private bool _isTerminateNode;
+        private bool _isTerminatingNode;
 
     }
 }
